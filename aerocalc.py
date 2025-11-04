@@ -1,7 +1,7 @@
 import math
 import numpy as np
 import streamlit as st
-import matplotlib.pyplot as plt
+
 
 # === Core Functions ===
 def T0_over_T(M, gamma):
@@ -152,3 +152,4 @@ if st.button("Calculate"):
         st.pyplot(fig)
     else:
         st.error("Invalid input or no solution found.")
+
