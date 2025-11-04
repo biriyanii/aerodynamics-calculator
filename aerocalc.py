@@ -137,19 +137,3 @@ if st.button("Calculate"):
         P_vals = [P0_over_P(M, gamma) for M in M_vals]
         rho_vals = [rho0_over_rho(M, gamma) for M in M_vals]
         A_vals = [A_over_Astar(M, gamma) for M in M_vals]
-
-        fig, ax = plt.subplots(figsize=(7, 5))
-        ax.plot(M_vals, T_vals, label="T₀/T")
-        ax.plot(M_vals, P_vals, label="P₀/P")
-        ax.plot(M_vals, rho_vals, label="ρ₀/ρ")
-        ax.plot(M_vals, A_vals, label="A/A*")
-        ax.axvline(result['Mach'], color="#FF6600", linestyle="--", label="Current Mach")
-        ax.set_xlabel("Mach Number (M)")
-        ax.set_ylabel("Ratio Value")
-        ax.set_title("Isentropic Flow Ratios vs Mach Number")
-        ax.legend()
-        ax.grid(True, linestyle="--", alpha=0.4)
-        st.pyplot(fig)
-    else:
-        st.error("Invalid input or no solution found.")
-
