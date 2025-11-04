@@ -91,7 +91,7 @@ st.markdown("""
             --osu-orange: #FF6600;
         }
         .stApp {
-            background-color: #121212;
+            background-color: #E6782E;
             color: white;
         }
         h1, h2, h3 {
@@ -111,8 +111,7 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-st.title("🌬️ Isentropic Flow Calculator")
-st.caption("A compressible flow tool built with Python — adjustable γ, subsonic/supersonic modes, and OSU styling.")
+st.title("Isentropic Flow Calculator")
 
 gamma = st.number_input("Ratio of Specific Heats (γ)", value=1.4, min_value=1.0, step=0.01)
 input_type = st.selectbox("Select Input Type", ["Mach", "T0/T", "P0/P", "ρ0/ρ", "A/A*"])
@@ -129,11 +128,3 @@ if st.button("Calculate"):
         st.write("### Results:")
         for key, value in result.items():
             st.write(f"**{key}:** {value:.6f}")
-
-        # Plot section
-        st.write("### 📈 Property Variation with Mach Number")
-        M_vals = np.linspace(0.1, 5, 200)
-        T_vals = [T0_over_T(M, gamma) for M in M_vals]
-        P_vals = [P0_over_P(M, gamma) for M in M_vals]
-        rho_vals = [rho0_over_rho(M, gamma) for M in M_vals]
-        A_vals = [A_over_Astar(M, gamma) for M in M_vals]
