@@ -91,7 +91,7 @@ st.markdown("""
             --osu-orange: #FF6600;
         }
         .stApp {
-            background-color: #FDFBD4;
+            background-color: #71797E;
             color: white;
         }
         h1, h2, h3 {
@@ -128,4 +128,5 @@ if st.button("Calculate"):
         st.write("### Results:")
         for key, value in result.items():
             st.write(f"**{key}:** {value:.6f}")
+
 
